@@ -8,7 +8,8 @@
     <title>Wellcome to Ansar's library</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
 
 <body>
 
@@ -33,11 +34,13 @@
             </form>
         </div>
     </nav>
+    <div id="message">
+    </div>
 
     <div class="container my-3">
         <h1>Ansar's library</h1>
         <hr>
-        <form>
+        <form id="libraryForm">
             <div class="row mb-3">
                 <label for="bookName" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
@@ -54,44 +57,47 @@
                 <legend class="col-form-label col-sm-2 pt-0">Type</legend>
                 <div class="col-sm-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Type" id="Fiction" value="Fiction" checked>
+                        <input class="form-check-input" type="radio" name="Type" id="fiction" value="Fiction" checked>
                         <label class="form-check-label" for="Fiction">
                             Fiction
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Type" id="Computer Programing"
+                        <input class="form-check-input" type="radio" name="Type" id="programing"
                             value="Computer Programing">
                         <label class="form-check-label" for="Computer Programing">
                             Computer Programing
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Type" id="Novels" value="Novels">
+                        <input class="form-check-input" type="radio" name="Type" id="novels" value="Novels">
                         <label class="form-check-label" for="Novels">
                             Novels
-                        </label>
-                    </div>
-                    <div class="form-check ">
-                        <input class="form-check-input" type="radio" name="Type" id="Scince" value="Scince">
-                        <label class="form-check-label" for="Scince">
-                            Scince
                         </label>
                     </div>
                 </div>
             </fieldset>
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Add Book</button>
+                    <button id="libraryBtn" type="submit" class="btn btn-primary">Add Book</button>
                 </div>
             </div>
         </form>
         <div id="container">
+            <h1>your's Book</h1>
             <table class="table table-dark table-hover">
-                ...
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Type</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    
+                </tbody>
             </table>
         </div>
-
     </div>
 
 
@@ -99,7 +105,7 @@
 
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -109,7 +115,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
+    <!-- <script src="index.js"></script> -->
+    <script src="indexes6.js"></script>
 </body>
 
 </html>

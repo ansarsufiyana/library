@@ -68,17 +68,45 @@ function libraryFormSubmit(e) {
 
   let book = new Book(name, author, type);
   console.log(book);
-  
-  let display = new Display();
-  if(display.validate(book)){
-      display.add(book);
-      display.clear();
-      display.show('success', 'Your book hass been successfully added')
 
-  }
-  else{
-      // // show error to the user
-      display.show('danger', 'Sorry you cannot add this book');
+  let display = new Display();
+  if (display.validate(book)) {
+    display.add(book);
+    display.clear();
+    display.show("success", "Your book hass been successfully added");
+  } else {
+    // // show error to the user
+    display.show("danger", "Sorry you cannot add this book");
   }
   e.preventDefault();
-};
+}
+console.log(book);
+
+function savedata() {
+  let name = document.getElementById("bookName").value;
+  let author = document.getElementById("author").value;
+  let type;
+  let fiction = document.getElementById("fiction");
+  let programing = document.getElementById("programing");
+  let novels = document.getElementById("novels");
+
+  if (fiction.checked) {
+    type = fiction.value;
+  } else if (programing.checked) {
+    type = programing.value;
+  } else if (novels.checked) {
+    type = novels.value;
+  }
+
+  let userRecords = new Array();
+  userRecords = JSON.parse(localStorage.getItem("users"))
+    ? JSON.parse(localStorage.getItem("users"))
+    : [];
+
+  userRecords.push({
+    name: name,
+    author: author,
+    type: type,
+  });
+  localStorage.setItem("users", JSON.stringify(userRecords));
+}
